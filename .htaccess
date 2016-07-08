@@ -1,0 +1,26 @@
+RewriteEngine On    # Turn on the rewriting engine
+
+
+RewriteRule    ^service-details/?$    default/source/workflow/services/services-details.php
+
+#RewriteRule    ^categories/([^/]+)/?$    default/source/workflow/categories/categories.php?region=$1
+#RewriteRule    ^categories/([^/]+)/([^/]+)/?$    default/source/workflow/categories/categories.php?region=$1&category=$2
+
+#RewriteRule    ^categories/([^/]+)/([^/]+)/([^/]+)/([^/]+)/?$    default/source/workflow/categories/categories-details.php?region=$1&category=$2&categoryName=$3&categoryId=$4
+
+RewriteRule    ^about-us/?$    default/source/workflow/about-us/about-us.php
+RewriteRule    ^contact-us/?$    default/source/workflow/contact-us/contact-us.php
+
+RewriteRule    ^privacy/?$    default/source/workflow/privacy/privacy.php
+RewriteRule    ^terms/?$    default/source/workflow/terms/terms.php
+
+RewriteRule    ^gallery/?$    default/source/workflow/gallery/gallery.php
+
+
+
+
+RewriteRule    ^services/?$    default/source/workflow/services/services.php
+RewriteRule    ^services/([^/]+)/([^/]+)/?$    default/source/workflow/services/services.php?category=$1&categoryId=$2
+RewriteRule    ^services/([^/]+)/([^/]+)/([^/]+)/?$    default/source/workflow/services/services.php?location=$1&category=$2&categoryId=$3
+
+RewriteRule    ^service-details/([^/]+)/([^/]+)/?$    default/source/workflow/services/service-details.php?serviceName=$1&serviceId=$2

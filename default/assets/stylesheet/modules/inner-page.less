@@ -1,0 +1,119 @@
+.inner-content {
+	margin-top:60px;
+}
+
+.filtr-item {
+    padding: 1rem;
+}
+.item-desc {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    position: absolute;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem;
+    z-index: 1;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+}
+
+/* Filter controls */
+.multifilter li {
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+}
+.multifilter li {
+    background-color: #4b9eff;
+}
+.multifilter li.active {
+    background-color: #2265b4;
+}
+.gallery-hotel {
+	a {
+		img {
+			float:left;
+			width:100%;
+			border: 2px solid #333;
+			  -webkit-transition: -webkit-transform .15s ease;
+			  -moz-transition: -moz-transform .15s ease;
+			  -o-transition: -o-transform .15s ease;
+			  -ms-transition: -ms-transform .15s ease;
+			  transition: transform .15s ease;
+			  position: relative;
+
+			  &:hover {
+			  	-webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  z-index: 5;
+			  }
+		}
+	}
+}
+
+/*  service page */
+.service-title {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 8px;
+  padding-bottom: 9px;
+}
+.service-title a {
+  
+    color:#00AFFC;
+    font-size: 15px;
+  
+}
+.service-details ul li span {
+  font-size: 14px;
+  color:#8a8a8a;
+}
+.service-content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.property-item {
+  padding: 5px;
+  border: 1px solid #e6e6e6;
+  margin-top: 25px;
+  position: relative;
+}
+.service-image a {
+  width: 100%;
+  float: left;
+  padding: 3px;
+  border: 1px solid #e7e7e7;
+}
+.service-image a img {
+  float: left;
+  width: 100%;
+}
+.service-details ul li span.service-key:after {
+  content: ': ';
+}
+.service-details ul li span.service-key {
+  color:#444;
+}
+.service-details ul li span.prop-val {
+  font-size: 13px;
+}
+.service-nav {
+  position: relative;
+  padding-left: 1.25em;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.25em;
+    width: 1em;
+    height: 0.15em;
+    background: black;
+    box-shadow: 0 0.25em 0 0 black, 0 0.5em 0 0 black;
+  }
+}
