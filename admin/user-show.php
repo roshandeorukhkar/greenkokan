@@ -19,10 +19,11 @@ include_once('header1.php');
                 <!-- /.row -->
                 <div class="row">
 			
-          <a href="user-managment.php">
-	    <button style="float:right;" type="reset" class="btn btn-info">Add New user</button></a>
+          
                     <div class="col-lg-12">
                         <div class="panel panel-default">
+						<a href="user-managment.php">
+	    <button style="float:right;margin-right: 3px;margin-top: 3px;" type="reset" class="btn btn-info">Add New user</button></a>
                             <div class="panel-heading">
                                 Users Details
 			

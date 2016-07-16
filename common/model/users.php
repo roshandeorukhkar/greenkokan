@@ -100,5 +100,25 @@ class Model_Users extends Database
 		return $result['first_name'].' '.$result['last_name'];		
 	}
 	
+	## Get user First name And last Name by userid
+	function getcontant() {
+		$fields=array('title','heading');	
+		$tables=array($this->gk_landing_text);
+		$where=array("status='1'");		
+		$result1 = $this->SelectData($fields,$tables, $where, $order = array(), $group=array(),$limit = "",0,0); 
+		$result= $this->FetchRow($result1); 
+		return $result['title'].' '.$result['heading'];		
+	}
+	//
+	## Get Slider details by adv
+	function getadvDetails($id='Y') {
+		$fields=array();	
+		$tables=array($this->user);
+		$where=array("ad.feature=".$id);		
+		$result1 = $this->SelectData($fields,$tables, $where, $order = array(), $group=array(),$limit = "",0,0); 
+		$result= $this->FetchRow($result1); 
+		return $result;		
+	}
+	
 }
 ?>

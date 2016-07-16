@@ -2,14 +2,14 @@
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
                             <li class="sidebar-search">
-                                <div class="input-group custom-search-form">
+                                <!--<div class="input-group custom-search-form">
                                     <input type="text" class="form-control" placeholder="Search...">
                                     <span class="input-group-btn">
                                     <button class="btn btn-default" type="button">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </span>
-                                </div>
+                                </div>-->
                                 <!-- /input-group -->
                             </li>
 							
@@ -52,6 +52,9 @@
                             </li>
 							<li>
                                 <a href="package-show.php"><img src="img/packaged.png" width="20" height="20">Package</a>
+                            </li>
+							<li>
+                                <a href="client_management_list.php"><img src="img/packaged.png" width="20" height="20">Client Mangement</a>
                             </li>
 							<!--<li>
                                 <a href="page_show.php"><i class="fa fa-table fa-fw"></i> Pages Managment</a>

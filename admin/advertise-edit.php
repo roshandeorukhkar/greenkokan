@@ -313,6 +313,14 @@ if(isset($_POST['submit']) && $_POST['submit'] !="")
 							{
 								$error= "Mobile can not be empty";
 							}
+							else if($_POST['longitude']=='')
+							{
+								$error= "Longitude can not be empty";
+							}
+							else if($_POST['latitude']=='')
+							{
+								$error= "Latitude can not be empty";
+							}
 							else if($_POST['decs']=='')
 							{
 								$error= "description can not be empty";
@@ -337,7 +345,21 @@ if(isset($_POST['submit']) && $_POST['submit'] !="")
 									   $phone= $_POST['phone'];
 								       $address= $_POST['address'];
 								       $link= $_POST['link'];
-										$query="update `gk_advertise` set `name`='".$name."',`decs`='".$decs."',`authar`='".$authar."',`email`='".$email."',`mobile`='".$mobile."',`package_id`='".$package_id."',`feature`='".$feature."',`category_name`='".$category_name."',`sub_category_id`='".$sub_category_id."',`phone`='".$phone."',`address`='".$address."',`link`='".$link."' where advertise_id='$advertise_id'";
+									   $latitude= $_POST['latitude'];
+								       $longitude= $_POST['longitude'];
+									 if($_FILES['image']['name'] !="")
+									{
+									   $id = md5(uniqid(rand(1,9999))); // Genrate random id;
+									  $banner_image ="uploadifive/uploads/".$id."_".$_FILES['image']['name'];
+									   move_uploaded_file($_FILES["image"]["tmp_name"],$banner_image); 
+									}
+									else
+									{
+									  $banner_image =$_POST['banner_image'];
+									}
+									   
+									   
+										$query="update `gk_advertise` set `name`='".$name."',`decs`='".$decs."',`authar`='".$authar."',`email`='".$email."',`mobile`='".$mobile."',`package_id`='".$package_id."',`feature`='".$feature."',`category_name`='".$category_name."',`sub_category_id`='".$sub_category_id."',`phone`='".$phone."',`address`='".$address."',`link`='".$link."',`latitude`='".$latitude."',`longitude`='".$longitude."',`banner_image`='".$banner_image."' where advertise_id='$advertise_id'";
 												
 													$result=mysql_query($query);
 	
@@ -428,7 +450,7 @@ die;
 	}
 	</style>
                                     <div class="col-lg-6">
-                                        <form role="form" name="submit" id="adver_from" METHOD="POST" action="">
+                                        <form role="form" name="submit" id="adver_from" METHOD="POST" action="" enctype="multipart/form-data">
 										<?php
 										
 										     $query_select4="SELECT * FROM `gk_advertise` WHERE advertise_id ='".$advertise_id."'";			
@@ -455,6 +477,16 @@ die;
 											<div class="form-group">
                                                 <label>Phone</label>
                                                 <input type="number" class="form-control" name="phone" id="phone" placeholder="phone" value="<?php echo $row4['phone'];?>">
+												
+                                            </div>
+											<div class="form-group">
+                                                <label>Latitude</label>
+                                                <input type="number" class="form-control" name="latitude" id="latitude" placeholder="Latitude" value="<?php echo $row4['latitude'];?>" required>
+												
+                                            </div>
+											<div class="form-group">
+                                                <label>Longitude</label>
+                                                <input type="number" class="form-control" name="longitude" id="longitude" placeholder="Longitude" value="<?php echo $row4['longitude'];?>" required>
 												
                                             </div>
 											<div class="form-group">
@@ -537,9 +569,15 @@ jQuery(document).ready(function($) {
 										          ?>
 								                </select>
                                                </div>
+											   <div class="form-group">
+                                                <label>images</label>
+                                                 <input type="file" name="image" id="image" value="">
+												 <input type="hidden" name="banner_image" id="banner_image" value="<?php  echo $row4['banner_image'];	?>">
+												 <img src="<?php  echo $row4['banner_image'];?>" width="100" height="100">
+                                            </div>
 											   <div id="subc"></div>
 								<div class="form-group">
-								                 <label>Property image</label>
+								                 <label>Gallery image</label>
 								                
                    <div id="queueError" style="color:#ff0000;"></div>
 								
@@ -600,7 +638,19 @@ jQuery(document).ready(function($) {
                                             </div>
 											<div class="form-group">
                                                 <label>Authar</label>
-                                                <input class="form-control" name="authar" id="authar" placeholder="Authar" value="<?php echo $row4['authar'];?>">
+												<select  class="form-control"  name="authar" id="authar" required>          
+												 <option value="">please select</option>
+												<?php
+												$querymng=mysql_query("select client_id,client_name from  gk_client_management");
+												while($rowmng=mysql_fetch_array($querymng))
+												{
+												?>
+									              <option value="<?php echo $rowmng['client_id'];?>" <?php if($row4['authar']==$rowmng['client_id']) echo "selected";?>><?php echo $rowmng['client_name']; ?></option>
+												<?php
+												}
+											     ?>
+								                </select>
+                                                <!--<input class="form-control" name="authar" id="authar" placeholder="Authar" value="<?php echo $row4['authar'];?>">-->
 												
                                             </div>
 											<input type="submit" class="btn btn-info" name="submit" id="submit" value="submit">

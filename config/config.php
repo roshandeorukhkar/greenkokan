@@ -8,25 +8,22 @@ $application = "dev";
 //ini_set("dispaly_errors", "1");
 error_reporting(E_ALL);
 
-
-
 if($application == "dev") {
 	define("HST", "localhost");
 	define("USR", "root");
 	define("PWD", "");
-	define("DBN", "green_kokan");
+	define("DBN", "green_konkan");
 	define("DBTYPE", "mysql");
-	define('SITE_URL','http://localhost:81/green-kokan/');
-	define('DOC_ROOT','H:/My Programming Stuff/PHP Programming/htdocs/green-kokan');
-	define('DOC_ROOT_COMMON','H:/My Programming Stuff/PHP Programming/htdocs/green-kokan/common/');
+	define('SITE_URL','http://localhost/green-konkan/');
+	define('DOC_ROOT','C:\xampp\htdocs\green-konkan');
+	
+	define('DOC_ROOT_COMMON','C:/xampp/htdocs/green-kokan/common/');
 
 	define("EXACT_ROOT", realpath(dirname(dirname(__FILE__))));
 	define('TEMPLATEDIR',DOC_ROOT.'/default/templates/');
 	
-	define('SITE_URL_COMMON','http://localhost:81/green-kokan/common');
+	define('SITE_URL_COMMON','http://localhost/green-kokan/common');
 	define("COMMON_JS_PATH", SITE_URL_COMMON."/js");
-
-	define('DOC_FOLDER' , 'green-kokan/');
 	
 } else {
 	define("HST", "localhost");
@@ -44,7 +41,6 @@ if($application == "dev") {
 	
 	define('SITE_URL_COMMON','http://www.greenkokan.com/common');
 	define("COMMON_JS_PATH", SITE_URL_COMMON."/js");
-	define('DOC_FOLDER' , '');
 }
 	## Set time zone
 	date_default_timezone_set('Asia/Calcutta');
@@ -57,41 +53,11 @@ if($application == "dev") {
 	$smarty->force_compile = true;
 	/*********** End of Creating Object of Smarty ***********/
 	
-	//require DOC_ROOT . "/default/source/common/third-party/less.php/lessc.inc.php";
+	require DOC_ROOT . "/default/source/common/third-party/less.php/lessc.inc.php";
 
-	//$less = new lessc;
-	//$less->setFormatter("compressed");
-	//unlink(DOC_ROOT . "/default/assets/stylesheet/css/stylesheet.css");
-	// create a new cache object, and compile
-	//$cache = $less->cachedCompile();
-	//$less->checkedCompile(, );
-
-	//$inputFile = DOC_ROOT . "/default/assets/stylesheet/main.less";
-	//$outputFile = DOC_ROOT . "/default/assets/stylesheet/css/stylesheet.css";
-
-	function autoCompileLess($inputFile, $outputFile) {
-		  // load the cache
-		  $cacheFile = $inputFile.".cache";
-
-		  if (file_exists($cacheFile)) {
-		    $cache = unserialize(file_get_contents($cacheFile));
-		  } else {
-		    $cache = $inputFile;
-		  }
-
-		  $less = new lessc;
-
-		
-
-	  $newCache = $less->cachedCompile($cache);
-
-	  if (!is_array($cache) || $newCache["updated"] > $cache["updated"]) {
-	    file_put_contents($cacheFile, serialize($newCache));
-	    file_put_contents($outputFile, $newCache['compiled']);
-	  }
-	}
-
-	//autoCompileLess($inputFile, $outputFile);
+	$less = new lessc;
+	unlink(DOC_ROOT . "/default/assets/stylesheet/css/stylesheet.css");
+	$less->checkedCompile(DOC_ROOT . "/default/assets/stylesheet/main.less", DOC_ROOT . "/default/assets/stylesheet/css/stylesheet.css");
 	
 	## Assign site url to smarty variable
 	$smarty->assign("siteroot", SITE_URL);

@@ -1,6 +1,15 @@
 <?php
-session_start();
+    session_start();
 	include_once('config.php');
+	if(!isset($_SESSION['user_name']))
+	{
+				?>
+				<script type="text/javascript">
+				var newLocation = "<?php echo 'index.php'?>";
+				window.location = newLocation;   
+				</script>				
+				<?php	
+	}
 	$user_name = $_SESSION['user_name'];
 	
 	

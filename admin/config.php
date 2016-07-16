@@ -15,16 +15,13 @@
 
 error_reporting(E_ALL);
 
-/*
-$dbHost = "localhost";
-$dbUser = "rajeshj2016";
-$dbPass = "!QAZxsw2";
-$dbname = "green_kokan"; 
-*/
+
 $dbHost = "localhost";
 $dbUser = "root";
 $dbPass = "";
-$dbname = "green_kokan"; 
+$dbname = "green_konkan";
+
+
 
 $dbC = @mysql_connect("$dbHost", "$dbUser", "$dbPass") or DIE('Connection to host is failed, perhaps the service is down!');
 // Select the database

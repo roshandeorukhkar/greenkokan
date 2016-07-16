@@ -287,6 +287,14 @@ include_once('header1.php');
 							{
 								$error= "Mobile can not be empty";
 							}
+							else if($_POST['longitude']=='')
+							{
+								$error= "Longitude can not be empty";
+							}
+							else if($_POST['latitude']=='')
+							{
+								$error= "Latitude can not be empty";
+							}
 							else if($_POST['decs']=='')
 							{
 								$error= "description can not be empty";
@@ -303,6 +311,10 @@ include_once('header1.php');
 							{
 								$error= "Authar can not be empty";
 							}
+							else if($_FILES['image']['name'] =="")
+							{
+							    $error= "Banner Image can not be empty";
+							}
 							else
 							{
 								$category_name= $_POST['category_name'];
@@ -310,12 +322,26 @@ include_once('header1.php');
 								$phone= $_POST['phone'];
 								$address= $_POST['address'];
 								$link= $_POST['link'];
+								$latitude= $_POST['latitude'];
+								$longitude= $_POST['longitude'];
+								
+								
+									if($_FILES['image']['name'] !="")
+									{
+									   $id = md5(uniqid(rand(1,9999))); // Genrate random id;
+									  $banner_image ="uploadifive/uploads/".$id."_".$_FILES['image']['name'];
+									   move_uploaded_file($_FILES["image"]["tmp_name"],$banner_image); 
+									}
+									else
+									{
+									  $banner_image ="";
+									}
 								
 								if($error == "")
 								{
 								//$newpat ="upload/new/".$_FILES['image']['name'];
                                  // move_uploaded_file($_FILES["image"]["tmp_name"],$newpat);
-								 $query="INSERT INTO `gk_advertise` (`name`,`decs`,`authar`,`email`,`mobile`,`package_id`,`feature`,`category_name`,`sub_category_id`,`phone`,`address`,`link`) VALUES ('".$name."','".$decs."','".$authar."','".$email."','".$mobile."','".$package_id."','".$feature."','".$category_name."','".$sub_category_id."','".$phone."','".$address."','".$link."')";
+								 $query="INSERT INTO `gk_advertise` (`name`,`decs`,`authar`,`email`,`mobile`,`package_id`,`feature`,`category_name`,`sub_category_id`,`phone`,`address`,`link`,longitude,latitude,banner_image) VALUES ('".$name."','".$decs."','".$authar."','".$email."','".$mobile."','".$package_id."','".$feature."','".$category_name."','".$sub_category_id."','".$phone."','".$address."','".$link."','".$longitude."','".$latitude."','".$banner_image."')";
 								 mysql_query($query);
 								$id = mysql_insert_id();
 								if(isset($_POST['fname']) && $_POST['fname'] !="")	
@@ -388,16 +414,20 @@ include_once('header1.php');
 														$("#adver_from").validate({
 															rules: {
 																page_name: "required",
-																decs: "required",
 																package_id: "required",
 																authar: "required",
 																category_name: "required",
+																decs: {
+																required: true,
+																minlength: 2,
+															    },
 															},
 															
 																		   
 															messages: {
 																page_name: "Please enter your Page name",
 																decs: "Please enter a description",
+																minlength: "Please enter a description",
 																package_id: "Please select package name",
 																authar: "Please enter a Authar",
 																category_name: "Please select category name",
@@ -412,7 +442,7 @@ include_once('header1.php');
 													}
 													</style>
                                     <div class="col-lg-6">
-                                        <form role="form" name="submit" id="adver_from" METHOD="POST" action="">
+                                        <form role="form" name="submit" id="adver_from" METHOD="POST" action="" enctype="multipart/form-data">
 										 
                                             <div class="form-group">
                                                 <label>Name</label>
@@ -432,6 +462,16 @@ include_once('header1.php');
 											<div class="form-group">
                                                 <label>Phone</label>
                                                 <input type="number" class="form-control" name="phone" id="phone" placeholder="phone" value="<?php if(isset($_POST['phone']) && $_POST['phone'] !="") { echo $_POST['phone']; }?>">
+												
+                                            </div>
+											<div class="form-group">
+                                                <label>Latitude</label>
+                                                <input type="number" class="form-control" name="latitude" id="latitude" placeholder="Latitude" value="<?php if(isset($_POST['phone']) && $_POST['phone'] !="") { echo $_POST['phone']; }?>" required>
+												
+                                            </div>
+											<div class="form-group">
+                                                <label>Longitude</label>
+                                                <input type="number" class="form-control" name="longitude" id="longitude" placeholder="Longitude" value="<?php if(isset($_POST['phone']) && $_POST['phone'] !="") { echo $_POST['phone']; }?>" required>
 												
                                             </div>
 											<div class="form-group">
@@ -503,8 +543,12 @@ include_once('header1.php');
 								                </select>
                                                </div>
 											   <div id="subc"></div>
+											   <div class="form-group">
+                                                <label>images</label>
+                                                 <input type="file" name="image" id="image" value="">
+                                            </div>
 											<div class="form-group">
-                                                <label>image</label>
+                                                <label>Gallery image</label>
 											<div id="queueError" style="color:#ff0000;"></div>
 
 											<input id="file_upload" name="file_upload" type="file" multiple="true">
@@ -526,7 +570,19 @@ include_once('header1.php');
                                             </div>
 											<div class="form-group">
                                                 <label>Authar</label>
-                                                <input class="form-control" name="authar" id="authar" placeholder="Authar" value="<?php if(isset($_POST['authar']) && $_POST['authar'] !="") { echo $_POST['authar']; }?>"required>
+												<select  class="form-control"  name="authar" id="authar" required>          
+												 <option value="">please select</option>
+												<?php
+												$querymng=mysql_query("select client_id,client_name from  gk_client_management");
+												while($rowmng=mysql_fetch_array($querymng))
+												{
+												?>
+									              <option value="<?php echo $rowmng['client_id'];?>"><?php echo $rowmng['client_name']; ?></option>
+												<?php
+												}
+											     ?>
+								                </select>
+                                                <!--<input class="form-control" name="authar" id="authar" placeholder="Authar" value="<?php if(isset($_POST['authar']) && $_POST['authar'] !="") { echo $_POST['authar']; }?>"required>-->
                                             </div>
 											<input type="submit" class="btn btn-info" name="submit" id="submit" value="submit">
                                             

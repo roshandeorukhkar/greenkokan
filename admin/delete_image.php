@@ -1,7 +1,31 @@
 <?php
 session_start();
 include_once('config.php');
-if($_REQUEST['action']=="category")
+if($_REQUEST['action']=="like")
+{
+     $query=mysql_query("select count(*) as counts from gk_likes where ip_address='".$_REQUEST['ip_address']."' and adv_id='".$_REQUEST['id']."'");
+	 $count=mysql_fetch_array($query);
+	 if($count['counts'] > 0)
+	 {
+		echo "Your already liked";
+	 }
+	 else
+	 {
+				mysql_query("insert into gk_likes(ip_address,adv_id) values ('".$_REQUEST['ip_address']."','".$_REQUEST['id']."')");
+				
+				$query=mysql_query("select count(*) as counts from gk_likes where adv_id='".$_REQUEST['id']."'");
+				$count=mysql_fetch_array($query);
+				echo $count['counts'];
+	}
+	 
+}
+else if($_REQUEST['action']=="adv")
+{
+  mysql_query("insert into gk_review(name,email,message,adv_id,rating) values ('".$_REQUEST['name']."','".$_REQUEST['email']."','".$_REQUEST['message']."','".$_REQUEST['adv_id']."','".$_REQUEST['user_rating']."')");
+ echo "Successfully added";
+  
+}
+else if($_REQUEST['action']=="category")
 {
 ?>
 

@@ -13,7 +13,7 @@ include_once('header1.php');
 						if(isset($_POST['submit']) && $_POST['submit'] !="")
 						{
 							 $category_name= $_POST['category_name'];
-							 $type= $_POST['type'];
+							// $type= $_POST['type'];
 							 $Severity=$_POST['Severity'];
 							 
 							 
@@ -25,10 +25,10 @@ include_once('header1.php');
 								{
 									$error= "Please select image";
 								}
-								else if($_POST['type']=='')
+								/* else if($_POST['type']=='')
 								{
 									$error= "Type can not be empty";
-								}
+								} */
 								else if($_POST['Severity']=='')
 								{
 									$error="Severity  can not be empty";
@@ -61,7 +61,7 @@ include_once('header1.php');
 									 else
 									 {
 									
-									 $query="INSERT INTO `gk_category` (`category_name`, `type`,`Severity`,`category_image`) VALUES ('".$category_name."','".$type."','".$Severity."','".$newpat."')";
+									 $query="INSERT INTO `gk_category` (`category_name`,`Severity`,`category_image`) VALUES ('".$category_name."','".$Severity."','".$newpat."')";
 										
 										mysql_query($query);
 										setSessionMsg('Record Added Successfully');
@@ -123,14 +123,12 @@ include_once('header1.php');
 		$("#form_category").validate({
 			rules: {
 				category_name: "required",
-				type: "required",
 			    Severity: "required",
 			},
 			
 						   
 			messages: {
 				category_name: "Please enter your category name",
-				type: "Please enter a valid type",
 				Severity: "Please enter a valid Severity"
 			}
 		});
@@ -156,11 +154,6 @@ include_once('header1.php');
                                                 <label>images</label>
                                                  <input type="file" name="image" id="image" value="">
                                             </div>
-											<div class="form-group">
-                                                <label>Type</label>
-                                                <input class="form-control" name="type" id="type" placeholder="type" value="<?php if(isset($_POST['type']) && $_POST['type'] !="") { echo $_POST['type']; }?>" required>
-                                            </div>
-											
 											<div class="form-group">
                                                 <label>Severity</label>
 												<select name="Severity" id="Severity" class="form-control" aria-required="true" required>

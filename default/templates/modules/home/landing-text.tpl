@@ -1,8 +1,8 @@
 <section id="feature">
 		<div class="container">
 			<div class="center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
-				<h2>About us</h2>
-				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+				<h2>{$landing['title']}</h2>
+				<p class="lead">{$landing['heading']}</p>
 			</div>
 			<div class="row">
 				<div class="features">

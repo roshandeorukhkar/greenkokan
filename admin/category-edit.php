@@ -20,15 +20,6 @@ $category_id = $_GET['category_id'];
 													{
 														 $category_name="";
 													}
-
-													if(isset($_POST['type']) && $_POST['type'] !="")
-													{
-														$type=$_POST['type'];
-													}
-													else
-													{
-														$type="";
-													}
 													if(isset($_POST['Severity']) && $_POST['Severity'] !="")
 													{
 														$Severity=$_POST['Severity'];
@@ -49,7 +40,7 @@ $category_id = $_GET['category_id'];
 								  $newpat =$_POST['image_hide'];
 								}
 													
-													$query="update `gk_category` set `category_name`='".$category_name."',type='".$type."',severity='".$Severity."',category_image='".$newpat."' where category_id='$category_id'";
+													$query="update `gk_category` set `category_name`='".$category_name."',severity='".$Severity."',category_image='".$newpat."' where category_id='$category_id'";
 													
 													$result=mysql_query($query);
 													setSessionMsg('Record Updated Successfully');
@@ -88,14 +79,12 @@ $category_id = $_GET['category_id'];
 		$("#form_category").validate({
 			rules: {
 				category_name: "required",
-				type: "required",
 			Severity: "required",
 			},
 			
 						   
 			messages: {
 				category_name: "Please enter your category name",
-				type: "Please enter a valid type",
 				Severity: "Please enter a valid Severity"
 			}
 		});
@@ -138,10 +127,6 @@ $category_id = $_GET['category_id'];
                                                 <label>Category Name</label>
                                                 <input class="form-control" name="category_name" id="category_name" placeholder="category_name" value="<?php echo $row4['category_name'];?>" required>
 												
-                                            </div>
-											<div class="form-group">
-                                                <label>Type</label>
-                                                <input class="form-control" name="type" id="type" placeholder="type" value="<?php echo $row4['type'];?>" required>
                                             </div>
 											<div class="form-group">
                                                 <label>images</label>

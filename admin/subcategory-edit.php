@@ -21,18 +21,7 @@ $sub_category_id = $_GET['sub_category_id'];
 									{
 										 $category_name="";
 									}
-
-									if(isset($_POST['type']) && $_POST['type'] !="")
-									{
-										$type=$_POST['type'];
-									}
-									else
-									{
-										$type="";
-									}
-									
-									
-									 $query="update `gk_sub_category` set `sub_category`='".$sub_category."',`category_name`='".$category_name."',type='".$type."' where sub_category_id='$sub_category_id'";
+									 $query="update `gk_sub_category` set `sub_category`='".$sub_category."',`category_name`='".$category_name."' where sub_category_id='$sub_category_id'";
 									
 									$result=mysql_query($query);
 									setSessionMsg('Record Updated Successfully');	
@@ -68,13 +57,11 @@ $sub_category_id = $_GET['sub_category_id'];
 														rules: {
 															sub_category: "required",
 															category_name: "required",
-															type: "required",
 														},
 														   
 														messages: {
 															sub_category: "Please enter your Sub category",
 															category_name: "Please enter your category name",
-															type: "Please enter a valid type"
 														}
 													});
 												});
@@ -126,10 +113,6 @@ $sub_category_id = $_GET['sub_category_id'];
 														   ?>
 												</select>
                                                </div>
-											<div class="form-group">
-                                                <label>type</label>
-                                                <input class="form-control" name="type" id="type" placeholder="Email" value="<?php echo $row4['type'];?>">
-                                            </div>
 											
 											<input type="submit" class="btn btn-info" name="submit" id="submit" value="submit">
                                             <button type="reset" class="btn btn-default" onclick="goBack()">Cancel</button>

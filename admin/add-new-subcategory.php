@@ -10,7 +10,6 @@ include_once('header1.php');
 						{
 						 $sub_category= $_POST['sub_category'];
 						 $category_name= $_POST['category_name'];
-						 $type=$_POST['type'];
 							if($_POST['sub_category']=='')
 							{
 								$error= " Sub category can not be empty";
@@ -20,15 +19,11 @@ include_once('header1.php');
 							{
 								$error= " category Name can not be empty";
 							}
-							else if($_POST['type']=='')
-							{
-								$error=" type  can not be empty";
-							}
 							else
 							{
 								if($error == "")
 								{
-								 $query="INSERT INTO `gk_sub_category` (`sub_category`, `category_name`, `type`) VALUES ('".$sub_category."','".$category_name."','".$type."')";
+								 $query="INSERT INTO `gk_sub_category` (`sub_category`, `category_name`) VALUES ('".$sub_category."','".$category_name."')";
 								 setSessionMsg('Record Added Successfully');
 									
 									mysql_query($query);
@@ -83,13 +78,11 @@ include_once('header1.php');
 														rules: {
 															sub_category: "required",
 															category_name: "required",
-															type: "required",
 														},
 														   
 														messages: {
 															sub_category: "Please enter your Sub category",
-															category_name: "Please enter your category name",
-															type: "Please enter a valid type"
+															category_name: "Please enter your category name"
 														}
 													});
 												});
@@ -125,10 +118,6 @@ include_once('header1.php');
 										          ?>
 								                </select>
                                                </div>
-											<div class="form-group">
-                                                <label>Type</label>
-                                                <input class="form-control" name="type" id="type" placeholder="type" value="<?php if(isset($_POST['type']) && $_POST['type'] !="") { echo $_POST['type']; }?>" required>
-                                            </div>
 											<input type="submit" class="btn btn-info" name="submit" id="submit" value="submit">
                                          <button type="reset" class="btn btn-default" onclick="goBack()">Cancel</button>   
                                         </form>

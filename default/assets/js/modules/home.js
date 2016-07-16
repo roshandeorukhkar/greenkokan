@@ -34,11 +34,22 @@ jQuery(function($){
 			autoHeight: true
 		});
 	});
+	
+	$(".give-rating .star").click(function(){
+	  $(".give-rating .star").removeClass("filled")
+	  $(this).nextAll().addClass("filled")
+	  $(this).addClass("filled")
+	  console.log($(this).data("star"))
+	  $("input[name='give-rating']").val($(this).data("star"))
+	})
 });
 var map;
-function initMap() {
+function initMap(longitude,latitude) {
+/* alert(longitude);
+   alert(latitude); 
+*/
 	map = new google.maps.Map(document.getElementById('gmap'), {
-	center: {lat: -34.397, lng: 150.644},
+	center: {lat: latitude, lng: longitude},
 	zoom: 8
 	});
 }

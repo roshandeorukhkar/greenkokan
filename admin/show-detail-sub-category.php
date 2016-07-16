@@ -23,7 +23,7 @@ include_once('header1.php');
 					 
                         <div class="panel panel-default">
 						<a href="add-new-subcategory.php">
-					    <button style="float:right;" type="reset" class="btn btn-info"> New Add</button></a>
+					    <button style="float:right;margin-right: 3px;margin-top: 3px;" type="reset" class="btn btn-info"> New Add</button></a>
                             <div class="panel-heading">
                                 Show Sub Category
                             </div>
@@ -56,9 +56,8 @@ include_once('header1.php');
                                             <tr>
                                                 <th>Sub Category</th>
                                                 <th>Category</th>
-                                                <th>Type</th>
                                                 <th>Status</th>
-										        <th style="float:center;" colspan="2">Action2</th>
+										        <th style="float:center;" colspan="2">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -73,8 +72,8 @@ include_once('header1.php');
 														$page=1; 
 														
 													}; 
-													 $start_from = ($page-1) * 3; 
-															 $sql = "SELECT * FROM `gk_sub_category`where sub_category_id != 0 order by sub_category_id DESC limit $start_from, 3";
+													 $start_from = ($page-1) * 10; 
+															 $sql = "SELECT * FROM `gk_sub_category`where sub_category_id != 0 order by sub_category_id DESC limit $start_from, 10";
 															$result = mysql_query($sql);
 															while($row = mysql_fetch_array($result))
 															{ 
@@ -82,7 +81,6 @@ include_once('header1.php');
 																   
 																	<td><?php echo $row['sub_category'];?></td>	
 																	<td><?php echo $row['category_name'];?></td>	
-																	<td><?php echo $row['type'];?></td>	
 																	<td><?php
 																		if($row['status']=='1')
 																		{  
@@ -111,9 +109,9 @@ include_once('header1.php');
 										$rs_result = mysql_query($sql2); 
 										$row = mysql_fetch_row($rs_result); 
 										$total_records = $row[0]; 
-										$total_pages = ceil($total_records / 3); 
+										$total_pages = ceil($total_records / 10); 
 										//echo $total_pages;
-if($total_records > 3)
+if($total_records > 10)
 {											
 										if($page != 1)
 										{

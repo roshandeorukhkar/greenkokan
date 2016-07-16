@@ -19,10 +19,11 @@ include_once('header1.php');
                 <!-- /.row -->
                 <div class="row">
 			
-          <a href="faq-add.php">
-	    <button style="float:right;" type="reset" class="btn btn-info"> Add New FAQ </button></a>
+         
                     <div class="col-lg-12">
                         <div class="panel panel-default">
+						 <a href="faq-add.php">
+	    <button style="float:right;margin-right: 3px;margin-top: 3px;" type="reset" class="btn btn-info"> Add New FAQ </button></a>
                             <div class="panel-heading">
                                Show FAQ Details
 			
@@ -84,10 +85,10 @@ include_once('header1.php');
 														$page=1; 
 														
 													}; 
-													 $start_from = ($page-1) * 3; 
+													 $start_from = ($page-1) * 10; 
 													 
 													
-															 $sql = "SELECT * FROM `gk_faq` where faq_id != 0 order by faq_id DESC limit $start_from, 3";
+															 $sql = "SELECT * FROM `gk_faq` where faq_id != 0 order by faq_id DESC limit $start_from, 10";
 															$result = mysql_query($sql);
 															while($row = mysql_fetch_array($result))
 															{ 
@@ -127,9 +128,9 @@ include_once('header1.php');
 										$rs_result = mysql_query($sql2); 
 										$row = mysql_fetch_row($rs_result); 
 										$total_records = $row[0]; 
-										$total_pages = ceil($total_records / 3); 
+										$total_pages = ceil($total_records / 10); 
 										//echo $total_pages;
-if($total_records > 3)
+if($total_records > 10)
 {										
 										if($page != 1)
 										{
