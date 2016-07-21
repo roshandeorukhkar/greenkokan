@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-07 00:24:46
+/* Smarty version 3.1.29, created on 2016-07-21 23:47:09
   from "H:\My Programming Stuff\PHP Programming\htdocs\green-kokan\default\templates\widgets\nav-bar.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d53f68fc307_37262958',
+  'unifunc' => 'content_579111a51e9171_77741004',
   'file_dependency' => 
   array (
     '3ffd7484fa0ca6a11ac7208a29cee45126848573' => 
     array (
       0 => 'H:\\My Programming Stuff\\PHP Programming\\htdocs\\green-kokan\\default\\templates\\widgets\\nav-bar.tpl',
-      1 => 1467750736,
+      1 => 1468518542,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577d53f68fc307_37262958 ($_smarty_tpl) {
+function content_579111a51e9171_77741004 ($_smarty_tpl) {
 ?>
 <header id="header">
 		<div class="top-bar">
@@ -57,13 +57,16 @@ function content_577d53f68fc307_37262958 ($_smarty_tpl) {
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['siteroot']->value;?>
+					<a class="navbar-brand" href="<?php echo $_smarty_tpl->tpl_vars['siteroot']->value;?>
+"><img src="<?php echo $_smarty_tpl->tpl_vars['siteroot']->value;?>
 default/assets/images/themes/logo.png" alt="logo"></a>
 				</div>
 				<div class="collapse navbar-collapse navbar-right">
 					<ul class="nav navbar-nav">
-						<li class="<?php if ($_smarty_tpl->tpl_vars['active']->value == 'home') {?>active<?php }?>"><a href="#">Home</a></li>
-						<li><a href="/about-us.html">About Us</a></li>
+						<li class="<?php if ($_smarty_tpl->tpl_vars['active']->value == 'home') {?>active<?php }?>"><a href="<?php echo $_smarty_tpl->tpl_vars['siteroot']->value;?>
+">Home</a></li>
+						<li class="<?php if ($_smarty_tpl->tpl_vars['active']->value == 'about-us') {?>active<?php }?>"><a href="<?php echo $_smarty_tpl->tpl_vars['siteroot']->value;?>
+about-us">About Us</a></li>
 						<li class="dropdown <?php if ($_smarty_tpl->tpl_vars['active']->value == 'services') {?>active<?php }?>">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <i class="fa fa-angle-down"></i></a>
 							<ul class="dropdown-menu service-list-menu row">
@@ -117,7 +120,8 @@ services/doctors/10" class="ctrl-standard typ-subhed fx-sliderIn  list-group-ite
 								</li>
 							  </ul>
 						</li>
-						<li><a href="/contact-us.html">Contact</a></li>
+						<li class="<?php if ($_smarty_tpl->tpl_vars['active']->value == 'contact-us') {?>active<?php }?>"><a href="<?php echo $_smarty_tpl->tpl_vars['siteroot']->value;?>
+contact-us" >Contact</a></li>
 					</ul>
 				</div>
 			</div> 

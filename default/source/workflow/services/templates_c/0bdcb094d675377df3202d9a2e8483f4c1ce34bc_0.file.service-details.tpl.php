@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-07 00:24:46
+/* Smarty version 3.1.29, created on 2016-07-14 00:39:27
   from "H:\My Programming Stuff\PHP Programming\htdocs\green-kokan\default\templates\modules\services\service-details.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d53f6768490_20717230',
+  'unifunc' => 'content_578691e70ecbc9_98106338',
   'file_dependency' => 
   array (
     '0bdcb094d675377df3202d9a2e8483f4c1ce34bc' => 
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:../../widgets/scripts.tpl' => 1,
   ),
 ),false)) {
-function content_577d53f6768490_20717230 ($_smarty_tpl) {
+function content_578691e70ecbc9_98106338 ($_smarty_tpl) {
 ?>
 <!doctype html>
 <html>

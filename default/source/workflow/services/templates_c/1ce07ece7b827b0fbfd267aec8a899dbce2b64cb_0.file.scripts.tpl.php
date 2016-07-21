@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-07 00:24:46
+/* Smarty version 3.1.29, created on 2016-07-21 23:47:09
   from "H:\My Programming Stuff\PHP Programming\htdocs\green-kokan\default\templates\widgets\scripts.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d53f69fcae5_85438208',
+  'unifunc' => 'content_579111a5464917_10787047',
   'file_dependency' => 
   array (
     '1ce07ece7b827b0fbfd267aec8a899dbce2b64cb' => 
     array (
       0 => 'H:\\My Programming Stuff\\PHP Programming\\htdocs\\green-kokan\\default\\templates\\widgets\\scripts.tpl',
-      1 => 1467829397,
+      1 => 1468345242,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577d53f69fcae5_85438208 ($_smarty_tpl) {
+function content_579111a5464917_10787047 ($_smarty_tpl) {
 ?>
 
 <?php echo '<script'; ?>
@@ -44,6 +44,32 @@ function content_577d53f69fcae5_85438208 ($_smarty_tpl) {
  src="<?php echo $_smarty_tpl->tpl_vars['siteroot']->value;?>
 /default/assets/js/jquery.prettyPhoto.js"><?php echo '</script'; ?>
 >
+
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['siteroot']->value;?>
+/default/assets/js/jquery.countdown.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['siteroot']->value;?>
+/default/assets/js/jquery.counter.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['siteroot']->value;?>
+/default/assets/js/jquery.fancybox.pack.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['siteroot']->value;?>
+/default/assets/js/jquery.fancybox-media.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['siteroot']->value;?>
+/default/assets/js/jquery.imagesloaded.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['siteroot']->value;?>
+/default/assets/js/jquery.owl.carousel.min.js"><?php echo '</script'; ?>
+>
+
 <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['siteroot']->value;?>
 /default/assets/js/modules/home.js"><?php echo '</script'; ?>

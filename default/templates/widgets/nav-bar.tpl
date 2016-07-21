@@ -34,12 +34,12 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#"><img src="{$siteroot}default/assets/images/themes/logo.png" alt="logo"></a>
+					<a class="navbar-brand" href="{$siteroot}"><img src="{$siteroot}default/assets/images/themes/logo.png" alt="logo"></a>
 				</div>
 				<div class="collapse navbar-collapse navbar-right">
 					<ul class="nav navbar-nav">
-						<li class="{if $active eq 'home'}active{/if}"><a href="#">Home</a></li>
-						<li><a href="/about-us.html">About Us</a></li>
+						<li class="{if $active eq 'home'}active{/if}"><a href="{$siteroot}">Home</a></li>
+						<li class="{if $active eq 'about-us'}active{/if}"><a href="{$siteroot}about-us">About Us</a></li>
 						<li class="dropdown {if $active eq 'services'}active{/if}">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <i class="fa fa-angle-down"></i></a>
 							<ul class="dropdown-menu service-list-menu row">
@@ -92,7 +92,7 @@
 								</li>
 							  </ul>
 						</li>
-						<li><a href="/contact-us.html">Contact</a></li>
+						<li class="{if $active eq 'contact-us'}active{/if}"><a href="{$siteroot}contact-us" >Contact</a></li>
 					</ul>
 				</div>
 			</div> 

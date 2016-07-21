@@ -1,7 +1,6 @@
 <?php
-include_once('../../common/internal/inner-header.php');
-$smarty->assign('siteTitle', 'Konkan tour');
-$smarty->assign('siteName', 'kokan');
-$smarty->assign('moduleName', 'About us');
-$smarty->display('modules/about-us/about-us.tpl');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/green-kokan/includefiles.php');
+
+$smarty->assign('moduleName', 'about-us');
+$smarty->display(TEMPLATEDIR . '/modules/about-us/about-us.tpl');
 ?>

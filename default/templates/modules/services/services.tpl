@@ -8,8 +8,32 @@
 			<div class="row">
 						
 						<div class="block block-service-grid">
-							<div class="block-head">Doctors</div>
-							<ul class="row">
+							<div class="col-sm-12 block-head text-center">Doctors</div>
+							<div class="col-sm-3">
+								<div class="search-left-widget">
+									<h3 class="search-left-widget-title">Select area</h3>
+									<ul class="search-left-city">
+										<li><input type="checkbox" name=""><label for="checkbox">Chiplun</label></li>
+										<li><input type="checkbox" name=""><label for="checkbox">Khed</label></li>
+										<li><input type="checkbox" name=""><label for="checkbox">Ratnagiri</label></li>
+										<li><input type="checkbox" name=""><label for="checkbox">Sangameshwar</label></li>
+										<li><input type="checkbox" name=""><label for="checkbox">Guhagar</label></li>
+										<li><input type="checkbox" name=""><label for="checkbox">Mandangad</label></li>
+										<li><input type="checkbox" name=""><label for="checkbox">Mahad</label></li>
+										<li><input type="checkbox" name=""><label for="checkbox">Poladpur (15)</label></li>
+									</ul>
+								</div>
+								<div class="search-left-widget">
+									<h3 class="search-left-widget-title">Select subcategories</h3>
+									<ul class="search-left-city">
+										<li><input type="checkbox" name=""><label for="checkbox">Gynacologist (15)</label></li>
+										<li><input type="checkbox" name=""><label for="checkbox">Orthopedic</label></li>
+										<li><input type="checkbox" name=""><label for="checkbox">Psychologist</label></li>
+										<li><input type="checkbox" name=""><label for="checkbox">General surgen</label></li>
+									</ul>
+								</div>
+							</div>
+							<ul class="col-sm-9">
 								<li class="col-sm-4">
 									<div class="pic">
 										<img src="{$siteroot}default/assets/images/themes/list//item-7.jpg" width="370" height="200" alt="">
@@ -32,7 +56,7 @@
 									<h3><a href="#">ABC Clinic</a></h3>
 									<div class="author">by Roshan D</div>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et  dolore magna incididunt ut labore aliqua.</p>
-										<div class="rating pull-left">
+										<div class="rating">
 											<span class="star "></span>
 											<span class="star "></span>
 											<span class="star"></span>

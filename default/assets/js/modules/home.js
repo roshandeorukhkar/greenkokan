@@ -22,6 +22,18 @@ jQuery(function($){
 		return false;
 	});
 	$('.portfolio-filter >li>a:first').trigger("click");
+
+	$('.block-team .carousel').imagesLoaded(function()
+	{
+		$('.block-team .carousel').owlCarousel(
+		{
+			navigation: true,
+			navigationText: ['<i class="fa fa-angle-left">', '<i class="fa fa-angle-right">'],
+			pagination: false,
+			singleItem: true,
+			autoHeight: true
+		});
+	});
 });
 var map;
 function initMap() {
