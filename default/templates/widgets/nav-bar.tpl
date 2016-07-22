@@ -34,7 +34,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#"><img src="{$siteroot}default/assets/images/themes/logo.png" alt="logo"></a>
+					<a class="navbar-brand" href="{$siteroot}"><img src="{$siteroot}default/assets/images/themes/logo.png" alt="logo"></a>
 				</div>
 				<div class="collapse navbar-collapse navbar-right">
 					<ul class="nav navbar-nav">
@@ -43,9 +43,7 @@
 						<li class="dropdown {if $active eq 'services'}active{/if}">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <i class="fa fa-angle-down"></i></a>
 							
-						<!--{foreach from=$cont key=k item=vv}
-								{$vv['cnt']}
-						{/foreach} -->
+						
 	<ul class="dropdown-menu service-list-menu row">
 	{foreach from=$allcatgory key=k item=cat}
 	
@@ -57,42 +55,7 @@
 									</div>
 								</li>
 							{/foreach}	
-								<!--<li class="col-md-3">
-									<div class="list-group">
-									  <a href="#" class="ctrl-standard typ-subhed fx-sliderIn  list-group-item ">
-									    Cras justo odio
-									  </a>
-									  <a href="#" class="ctrl-standard typ-subhed fx-sliderIn list-group-item">Dapibus ac facilisis in</a>
-									  <a href="#" class="ctrl-standard typ-subhed fx-sliderIn list-group-item">Morbi leo risus</a>
-									  <a href="#" class="ctrl-standard typ-subhed fx-sliderIn list-group-item">Porta ac consectetur ac</a>
-									  <a href="#" class="ctrl-standard typ-subhed fx-sliderIn list-group-item">Vestibulum at eros</a>
-									</div>
-								</li>
 								
-								<li class="col-md-3">
-									<div class="list-group">
-									  <a href="#" class="ctrl-standard typ-subhed fx-sliderIn  list-group-item ">
-									    Cras justo odio
-									  </a>
-									  <a href="#" class="ctrl-standard typ-subhed fx-sliderIn list-group-item">Dapibus ac facilisis in</a>
-									  <a href="#" class="ctrl-standard typ-subhed fx-sliderIn list-group-item">Morbi leo risus</a>
-									  <a href="#" class="ctrl-standard typ-subhed fx-sliderIn list-group-item">Porta ac consectetur ac</a>
-									  <a href="#" class="ctrl-standard typ-subhed fx-sliderIn list-group-item">Vestibulum at eros</a>
-									</div>
-								</li>
-								
-								<li class="col-md-3">
-									<div class="list-group">
-									  <a href="#" class="ctrl-standard typ-subhed fx-sliderIn  list-group-item 
-									  ">
-									    Cras justo odio
-									  </a>
-									  <a href="#" class="ctrl-standard typ-subhed fx-sliderIn list-group-item">Dapibus ac facilisis in</a>
-									  <a href="#" class="ctrl-standard typ-subhed fx-sliderIn list-group-item">Morbi leo risus</a>
-									  <a href="#" class="ctrl-standard typ-subhed fx-sliderIn list-group-item">Porta ac consectetur ac</a>
-									  <a href="#" class="ctrl-standard typ-subhed fx-sliderIn list-group-item">Vestibulum at eros<span class="badge">12</span></a>
-									</div>
-								</li>-->
 							  </ul>
 
 						</li>

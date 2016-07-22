@@ -1,7 +1,7 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'] . '/green-konkan/includefiles.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/includefiles.php');
 //include_once($_SERVER['DOCUMENT_ROOT'] . '/green-konkan/default/source/workflow/services/services_calss.php');
-include_once($_SERVER['DOCUMENT_ROOT'] . '/green-konkan/common/model/services.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/common/model/services.php');
 //print_r($_REQUEST);
 
 //Adv detail

@@ -17,10 +17,9 @@ error_reporting(E_ALL);
 
 
 $dbHost = "localhost";
-$dbUser = "root";
-$dbPass = "";
-$dbname = "green_konkan";
-
+$dbUser = "rajeshj2016";
+$dbPass = "!QAZxsw2";
+$dbname = "green_kokan";
 
 
 $dbC = @mysql_connect("$dbHost", "$dbUser", "$dbPass") or DIE('Connection to host is failed, perhaps the service is down!');
